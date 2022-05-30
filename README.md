@@ -1,6 +1,6 @@
 # CNUI
 
-CNU + UI(CNUI)는 충남대학교 UI 라이브러리입니다.
+CNUI(CNU + UI)는 충남대학교 UI 라이브러리입니다.
 
 ## Getting Started
 
