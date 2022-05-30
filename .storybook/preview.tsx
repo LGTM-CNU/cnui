@@ -1,3 +1,4 @@
+import { CnuProvider } from '../src/contexts/CnuProvider';
 import StorybookThemeWrapper from '../src/stories/StorybookThemeWrapper';
 
 export const parameters = {
@@ -19,9 +20,11 @@ export const decorators = [
     } catch (error) {}
 
     return (
-      <StorybookThemeWrapper>
-        <Story />
-      </StorybookThemeWrapper>
+      <CnuProvider initialTheme={theme}>
+        <StorybookThemeWrapper>
+          <Story />
+        </StorybookThemeWrapper>
+      </CnuProvider>
     );
   },
 ];
