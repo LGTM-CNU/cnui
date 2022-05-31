@@ -37,7 +37,7 @@ function checkIsDarkTheme() {
   return systemPrefersDark;
 }
 
-export function ThemeProvider({ children, initialTheme = 'default' }: Props) {
+export function ThemeProvider({ children, initialTheme = 'dark' }: Props) {
   const [theme, setTheme] =
     useState<'light' | 'dark' | 'default'>(initialTheme);
   const [systemIsDark, setSystemIsDark] = useState(() => checkIsDarkTheme());
@@ -64,7 +64,7 @@ export function ThemeProvider({ children, initialTheme = 'default' }: Props) {
     if (theme === 'dark') return true;
     if (systemIsDark && theme === 'default') return true;
     return false;
-  }, [theme, setSystemIsDark]);
+  }, [theme, systemIsDark]);
 
   const toggle = useCallback(() => {
     if (isDarkTheme) {
