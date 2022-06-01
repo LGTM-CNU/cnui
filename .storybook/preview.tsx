@@ -3,6 +3,7 @@ import { themes } from '@storybook/theming';
 import { CnuProvider } from '../src/contexts/CnuProvider';
 import StorybookThemeWrapper from '../src/stories/StorybookThemeWrapper';
 import { GlobalStyles } from '../src/components/GlobalStyles';
+import './global.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -15,11 +16,18 @@ export const parameters = {
   options: {
     storySort: { order: ['Introduction', 'Colors', 'Components'] },
   },
+  darkMode: {
+    // Override the default dark theme
+    dark: { ...themes.dark, appContentBg: '#121212', appBg: '#121212' },
+    // Override the default light theme
+    light: { ...themes.normal },
+    stylePreview: true,
+  },
 };
 
 export const decorators = [
   (Story) => {
-    let theme: 'default' | 'light' | 'dark' = 'default';
+    let theme: 'default' | 'light' | 'dark' = 'dark';
     try {
       const data = JSON.parse(localStorage.getItem('sb-addon-themes-3'));
       document.body.dataset.theme = data.current;

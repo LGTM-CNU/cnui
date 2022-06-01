@@ -37,7 +37,7 @@ function checkIsDarkTheme() {
   return systemPrefersDark;
 }
 
-export function ThemeProvider({ children, initialTheme = 'dark' }: Props) {
+export function ThemeProvider({ children, initialTheme = 'default' }: Props) {
   const [theme, setTheme] =
     useState<'light' | 'dark' | 'default'>(initialTheme);
   const [systemIsDark, setSystemIsDark] = useState(() => checkIsDarkTheme());
@@ -192,9 +192,25 @@ const darkTheme = css`
 
 const styles = css`
   body {
+    ${lightTheme}
   }
 
   @media (prefers-color-scheme: dark) {
+    body {
+      ${darkTheme}
+    }
+  }
+
+  body[data-theme='light'] {
+    ${lightTheme};
+  }
+
+  body[data-theme='dark'] {
+    ${darkTheme};
+  }
+
+  body {
+    color: ${cssVar('accent-9')};
   }
 `;
 
