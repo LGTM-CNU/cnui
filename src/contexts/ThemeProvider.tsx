@@ -76,8 +76,8 @@ export function ThemeProvider({ children, initialTheme = 'default' }: Props) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, isDarkTheme, toggle }}>
-      {children}
       <Global styles={styles} />
+      {children}
     </ThemeContext.Provider>
   );
 }

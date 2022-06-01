@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { css } from '@emotion/react';
 import { Button } from './Button';
+import { Icon } from '../Icon';
 // import { Icon } from '../Icon';
 
 export default {
@@ -124,7 +125,49 @@ export function FullWidth() {
 export function WithIcon() {
   return (
     <div>
-      <div css={wrapper}>{/* <Button icon={} /> */}</div>
+      <div css={wrapper}>
+        <Button icon={<Icon name="upload" />}>Upload</Button>
+        <Button variant="ghost" icon={<Icon name="back" />}>
+          Back
+        </Button>
+        <Button
+          type="destructive"
+          icon={<Icon name="exit" />}
+          iconPosition="right"
+        >
+          Delete
+        </Button>
+      </div>
+      <div css={wrapper}>
+        <Button size="sm" icon={<Icon name="plane" />} variant="outline">
+          Send
+        </Button>
+      </div>
+      <div css={wrapper}>
+        <Button size="lg" icon={<Icon name="check" />}>
+          Save
+        </Button>
+      </div>
+      <div css={wrapper}>
+        <Button icon={<Icon name="check" />} isFullWidth>
+          Save
+        </Button>
+      </div>
+      <div css={wrapper}>
+        <Button icon={<Icon name="check" />} isFullWidth isStickIconToEnd>
+          Save
+        </Button>
+      </div>
+      <div css={wrapper}>
+        <Button
+          icon={<Icon name="check" />}
+          isFullWidth
+          isStickIconToEnd
+          iconPosition="right"
+        >
+          Save
+        </Button>
+      </div>
     </div>
   );
 }
