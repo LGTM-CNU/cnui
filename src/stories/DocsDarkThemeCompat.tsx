@@ -1,7 +1,8 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import { css, Global } from '@emotion/react';
 import { useDarkMode } from 'storybook-dark-mode';
+import { css, Global } from '@emotion/react';
 import ThemeProvider, { cssVar, useTheme } from '../contexts/ThemeProvider';
+import { CnuProvider } from '../contexts/CnuProvider';
 
 interface Props {
   children?: React.ReactNode;
@@ -17,7 +18,6 @@ function DocsDarkThemeCompatImpl(props: Props) {
       document.body.dataset.theme = data.current;
     } catch (e) {}
   }, []);
-
   useEffect(() => {
     setTheme(darkTheme ? 'dark' : 'light');
   }, [darkTheme, setTheme]);

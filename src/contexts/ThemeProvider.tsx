@@ -138,9 +138,9 @@ const lightTheme = css`
   --accent-9: #212121;
   --foreground: #121212;
 
-  --primary: #009688;
-  --primary-hover: #007e72;
-  --primary-active: #007267;
+  --primary: #3285f7;
+  --primary-hover: #1e6ad4;
+  --primary-active: #3285f7;
   --secondary: #c6e8e6;
   --secondary-hover: #b6e1de;
   --secondary-active: #a6dbd7;
@@ -171,9 +171,10 @@ const darkTheme = css`
   --accent-9: #e8eaed;
   --foreground: #ffffff;
 
-  --primary: #73e6db;
-  --primary-hover: #61d9ce;
-  --primary-active: #4eccc0;
+  --primary: #3285f7;
+  --primary-hover: #1e6ad4;
+  --primary-active: #3285f7;
+  /* --primary-active: #4a83ef; */
   --secondary: #214341;
   --secondary-hover: #1f4f4b;
   --secondary-active: #1e5b56;

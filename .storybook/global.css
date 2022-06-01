@@ -2,9 +2,10 @@
   background: var(--background);
 }
 
-/* #docs-root {
-  background: red;
-} */
+#docs-root {
+  background: var(--background);
+  /* color: var(--accent-9) !important; */
+}
 
 .sbdocs {
   background: var(--background) !important;
