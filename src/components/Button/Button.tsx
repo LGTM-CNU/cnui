@@ -91,10 +91,6 @@ export function Button({
     </>
   );
 
-  console.log(
-    safelyAlterColor('#3285f7', (color) => rgba(color, isDarkTheme ? 0.3 : 0.1))
-  );
-
   if (asLink) {
     return (
       <a href={href} css={styles.concat(resetLinkStyle)} {...(rest as any)}>

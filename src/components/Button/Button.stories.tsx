@@ -2,7 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { css } from '@emotion/react';
 import { Button } from './Button';
 import { Icon } from '../Icon';
-// import { Icon } from '../Icon';
 
 export default {
   title: 'Components/Button',

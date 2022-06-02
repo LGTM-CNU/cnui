@@ -1,2 +1,0 @@
-# cnui
-CNU + UI = CNUI
