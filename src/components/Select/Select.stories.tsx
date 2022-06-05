@@ -1,0 +1,145 @@
+import { useEffect, useState } from 'react';
+import { css } from '@emotion/react';
+import { Select } from './Select';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+export default {
+  title: 'Components/Select',
+  component: Select,
+} as ComponentMeta<typeof Select>;
+
+const Template: ComponentStory<typeof Select> = (args) => {
+  const [value, setValue] = useState(args.value);
+
+  useEffect(() => {
+    setValue(args.value);
+  }, [args.value]);
+
+  return (
+    <Select
+      {...args}
+      value={value}
+      onChange={(e) => {
+        setValue(e.target.value);
+      }}
+    />
+  );
+};
+
+export const Basic = Template.bind({});
+
+Basic.args = {
+  options: [
+    {
+      value: 'Option 1',
+    },
+    {
+      value: 'Option 2',
+    },
+    {
+      value: 'Option 3',
+    },
+  ],
+  value: 'Option 1',
+};
+
+Basic.argTypes = {};
+
+export function Placeholder() {
+  const [value, setValue] = useState('');
+
+  return (
+    <div css={wrapper}>
+      <Select
+        placeholder="Select an option"
+        options={[
+          {
+            value: 'Option 1',
+          },
+          {
+            value: 'Option 2',
+          },
+          {
+            value: 'Option 3',
+          },
+        ]}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </div>
+  );
+}
+
+export function Disabled() {
+  const [value, setValue] = useState('');
+
+  return (
+    <div css={wrapper}>
+      <Select
+        options={[
+          {
+            value: 'Option 1',
+          },
+          {
+            value: 'Option 2',
+          },
+          {
+            value: 'Option 3',
+          },
+        ]}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        disabled
+      />
+    </div>
+  );
+}
+
+export function Size() {
+  const [value, setValue] = useState('');
+  const options = [
+    {
+      value: 'Option 1',
+    },
+    {
+      value: 'Option 2',
+    },
+    {
+      value: 'Option 3',
+    },
+  ];
+
+  return (
+    <div css={wrapper}>
+      <Select
+        options={options}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        size="sm"
+      />
+      <Select
+        options={options}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        size="md"
+      />
+      <Select
+        options={options}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        size="lg"
+      />
+    </div>
+  );
+}
+
+const wrapper = css`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  & + & {
+    margin-top: 0.5rem;
+  }
+`;
