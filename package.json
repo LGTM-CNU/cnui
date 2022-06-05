@@ -1,16 +1,20 @@
 {
   "name": "@cnui/react",
   "author": "hyunjin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
+  "repository": "https://github.com/LGTM-CNU/cnui",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-dom": "^18.1.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.9.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "scripts": {
     "build": "rollup -c",
@@ -74,6 +78,7 @@
     "chromatic": "^6.5.4",
     "polished": "^4.2.2",
     "prop-types": "^15.8.1",
+    "react-scripts": "5.0.1",
     "rollup": "^2.75.5",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",

@@ -1,3 +1,10 @@
+export function safePx(value: string | number) {
+  if (typeof value === 'number') {
+    return `${value}px`;
+  }
+  return value;
+}
+
 export function getCSSVarValue(name: string) {
   if (typeof window === 'undefined') return '';
 
@@ -19,4 +26,8 @@ export function safelyAlterColor(
   }
 
   return alter(value);
+}
+
+export function isReactElement(el: any): el is React.ReactElement {
+  return !!el && !!el.type;
 }
