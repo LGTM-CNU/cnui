@@ -55,6 +55,7 @@ export function Text({
         truncate && truncateStyle,
         clamp && clampStyle(clamp),
       ],
+      className,
     },
     children
   );
