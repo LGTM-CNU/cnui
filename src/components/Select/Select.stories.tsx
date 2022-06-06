@@ -133,6 +133,35 @@ export function Size() {
   );
 }
 
+// export function WithLabel() {
+//   const [value, setValue] = useState('');
+
+//   return (
+//     <LabelGroup name="Select option">
+//       {({ focused, onBlur, onFocus, setFocusd }) => (
+//         <Select
+//           placeholder="Select an option"
+//           options={[
+//             {
+//               value: 'Option 1',
+//             },
+//             {
+//               value: 'Option 2',
+//             },
+//             {
+//               value: 'Option 3',
+//             },
+//           ]}
+//           value={value}
+//           onChange={(e) => setValue(e.target.value)}
+//           onFocus={onFocus}
+//           onBlur={onBlur}
+//         />
+//       )}
+//     </LabelGroup>
+//   );
+// }
+
 const wrapper = css`
   display: flex;
   flex-direction: column;
