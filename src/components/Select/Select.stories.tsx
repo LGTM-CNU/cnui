@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 import { Select } from './Select';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { LabelGroup } from '../LableGroup';
 
 export default {
   title: 'Components/Select',
@@ -133,34 +134,34 @@ export function Size() {
   );
 }
 
-// export function WithLabel() {
-//   const [value, setValue] = useState('');
+export function WithLabel() {
+  const [value, setValue] = useState('');
 
-//   return (
-//     <LabelGroup name="Select option">
-//       {({ focused, onBlur, onFocus, setFocusd }) => (
-//         <Select
-//           placeholder="Select an option"
-//           options={[
-//             {
-//               value: 'Option 1',
-//             },
-//             {
-//               value: 'Option 2',
-//             },
-//             {
-//               value: 'Option 3',
-//             },
-//           ]}
-//           value={value}
-//           onChange={(e) => setValue(e.target.value)}
-//           onFocus={onFocus}
-//           onBlur={onBlur}
-//         />
-//       )}
-//     </LabelGroup>
-//   );
-// }
+  return (
+    <LabelGroup name="Select option">
+      {({ focused, onBlur, onFocus, setFocused }) => (
+        <Select
+          placeholder="Select an option"
+          options={[
+            {
+              value: 'Option 1',
+            },
+            {
+              value: 'Option 2',
+            },
+            {
+              value: 'Option 3',
+            },
+          ]}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        />
+      )}
+    </LabelGroup>
+  );
+}
 
 const wrapper = css`
   display: flex;
